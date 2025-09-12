@@ -1,7 +1,8 @@
-from dotenv import load_dotenv
-load_dotenv()
+# if you dont use pipenv uncomment the following:
+# from dotenv import load_dotenv
+# load_dotenv()
 
-# VoiceBot UI with Gradio
+#VoiceBot UI with Gradio
 import os
 import gradio as gr
 
@@ -9,13 +10,15 @@ from doctor_brain import encode_image, analyze_image_with_query
 from patient_voice import record_audio, transcribe_with_groq
 from doctor_voice import text_to_speech_with_gtts, text_to_speech_with_elevenlabs
 
+#load_dotenv()
+
 system_prompt="""You have to act as a professional doctor, i know you are not but this is for learning purpose. 
             What's in this image?. Do you find anything wrong with it medically? 
-            If you make a differential, suggest some remedies for them. Do not add any numbers or special characters in 
-            your response. Your response should be in one long paragraph. Always answer as if you are answering to a real person.
-            Do not say 'In the image I see' but say 'With what I see, I think you have ....'
-            Do not respond as an AI model in markdown, your answer should mimic that of an actual doctor not an AI bot, 
-            Keep your answer concise (max 3 sentences). No preamble, start your answer right away please"""
+            If you make a differential, suggest some remedies for them. Donot add any numbers or special characters in 
+            your response. Your response should be in one long paragraph. Also always answer as if you are answering to a real person.
+            Donot say 'In the image I see' but say 'With what I see, I think you have ....'
+            Dont respond as an AI model in markdown, your answer should mimic that of an actual doctor not an AI bot, 
+            Keep your answer concise (max 2 sentences). No preamble, start your answer right away please"""
 
 
 def process_inputs(audio_filepath, image_filepath):
@@ -29,7 +32,7 @@ def process_inputs(audio_filepath, image_filepath):
     else:
         doctor_response = "No image provided for me to analyze"
 
-    voice_of_doctor = text_to_speech_with_elevenlabs(input_text=doctor_response, output_filepath="saved_files/final.mp3") 
+    voice_of_doctor = text_to_speech_with_elevenlabs(input_text=doctor_response, output_filepath="final.mp3") 
 
     return speech_to_text_output, doctor_response, voice_of_doctor
 
