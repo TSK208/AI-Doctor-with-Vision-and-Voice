@@ -1,3 +1,6 @@
 #venv
 .venv/
 ai_doctor/
+
+#env
+.env
