@@ -16,8 +16,8 @@ def text_to_speech_with_gtts_old(input_text, output_filepath):
     audioobj.save(output_filepath)
 
 
-input_text="Hi this is Ai with Hassan!"
-text_to_speech_with_gtts_old(input_text=input_text, output_filepath="gtts_testing.mp3")
+input_text="Hi this is Srikanth!"
+text_to_speech_with_gtts_old(input_text=input_text, output_filepath="saved_files/gtts_testing.mp3")
 
 #Step1b: Setup Text to Speech–TTS–model with ElevenLabs
 import elevenlabs
@@ -35,7 +35,7 @@ def text_to_speech_with_elevenlabs_old(input_text, output_filepath):
     )
     elevenlabs.save(audio, output_filepath)
 
-#text_to_speech_with_elevenlabs_old(input_text, output_filepath="elevenlabs_testing.mp3") 
+text_to_speech_with_elevenlabs_old(input_text, output_filepath="saved_files/elevenlabs_testing.mp3") 
 
 #Step2: Use Model for Text output to Voice
 
@@ -65,8 +65,8 @@ def text_to_speech_with_gtts(input_text, output_filepath):
         print(f"An error occurred while trying to play the audio: {e}")
 
 
-input_text="Hi this is Ai with Hassan, autoplay testing!"
-#text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
+input_text="Hi this is Srikanth, autoplay testing!"
+text_to_speech_with_gtts(input_text=input_text, output_filepath="saved_files/gtts_testing_autoplay.mp3")
 
 
 def text_to_speech_with_elevenlabs(input_text, output_filepath):
@@ -91,4 +91,4 @@ def text_to_speech_with_elevenlabs(input_text, output_filepath):
     except Exception as e:
         print(f"An error occurred while trying to play the audio: {e}")
 
-#text_to_speech_with_elevenlabs(input_text, output_filepath="elevenlabs_testing_autoplay.mp3")
+text_to_speech_with_elevenlabs(input_text, output_filepath="saved_files/elevenlabs_testing_autoplay.mp3")
