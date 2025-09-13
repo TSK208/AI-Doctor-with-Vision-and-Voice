@@ -1,4 +1,4 @@
-# Project AI Doctor 2.0
+# Project AI Doctor
 
 Welcome to Project AI Doctor 2.0, an advanced system designed to assist with medical interactions using a combination of a powerful AI brain, voice-to-text, and text-to-voice capabilities. This project is built using Python and leverages state-of-the-art libraries for a seamless and intuitive experience.
 
